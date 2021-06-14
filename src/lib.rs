@@ -1,3 +1,22 @@
+//! Aims to provide a simple pipe-like functionality for async code.
+//!
+//! # Example
+//!
+//! ```rust
+//! # #[tokio::main]
+//! # async fn main() {
+//! #    use tokio::io::{AsyncWriteExt, AsyncReadExt};
+//!     let (mut reader, mut writer) = simple_async_pipe::pipe(64);
+//!
+//!     let message = b"hello world";
+//!     writer.write_all(message).await.unwrap();
+//!
+//!     let mut buffer = vec![0u8; message.len()];
+//!     reader.read_exact(&mut buffer).await.unwrap();
+//!     assert_eq!(&buffer, message);
+//! # }
+//! ```
+
 use std::pin::Pin;
 use std::sync::{Arc, Mutex};
 use std::task::{Context, Poll, Waker};
@@ -22,6 +41,7 @@ struct PipeShared {
     write_waker: Option<Waker>,
 }
 
+/// Creates a in-memory pipe. [PipeWrite] will not succeed instant if the internal buffer is full.
 pub fn pipe(buffer: usize) -> (PipeRead, PipeWrite) {
     let (sender, receiver) = mpsc::channel(buffer);
     let shared = Arc::new(Mutex::new(PipeShared {
