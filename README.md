@@ -1,9 +1,15 @@
 # simple-async-pipe
 
+![crates.io simple-async-pipe](https://img.shields.io/badge/crates.io-simple--async--pipe-orange)
+![license MIT](https://img.shields.io/badge/LICENSE-MIT-green)
+![license APACHE2.0](https://img.shields.io/badge/LICENSE-APACHE2.0-green)
+![passively maintaned](https://img.shields.io/badge/maintenance-passive-yellow)
+
+
 Aims to provide a simple pipe-like functionality for async code. Created to be used in
 tests. No performance optimization done.
 
-[Documentation](https://docs.rs/simple_async_pipe/)
+[![Documentation](https://img.shields.io/badge/Documentation-docs.rs-blue)](https://docs.rs/simple_async_pipe)
 
 ## License
 
