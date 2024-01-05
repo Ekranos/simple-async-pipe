@@ -1,7 +1,7 @@
 # simple-async-pipe
 
 ![crates.io simple-async-pipe](https://img.shields.io/badge/crates.io-simple--async--pipe-orange)
-![tests](https://github.com/ekranos/simple-async-pipe/actions/workflows/test.yml/badge.svg)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ekranos/simple-async-pipe/test.yml?logo=github&label=test)
 ![license MIT](https://img.shields.io/badge/LICENSE-MIT-green)
 ![license APACHE2.0](https://img.shields.io/badge/LICENSE-APACHE2.0-green)
 ![passively maintaned](https://img.shields.io/badge/maintenance-passive-yellow)
